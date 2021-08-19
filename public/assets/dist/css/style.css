@@ -1,0 +1,43 @@
+html {
+    font-family: Roboto;
+    font-size: 1.1rem
+}
+
+/* Login */
+.push{
+    margin-top: 8rem;
+}
+.navcolor{
+    background-color: #185ADB;
+}
+
+.botones button{
+    width: 14rem;
+    margin-top: 1rem;
+}
+
+.formularioFecha{
+    background-color: #FFC947;
+    top: 5rem;
+    max-width: 20rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;   
+    display: none;
+}
+
+.formularioRegistro{
+    background-color: #FFC947;
+    top: 5rem;
+    max-width: 20rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;   
+    display: none;
+}

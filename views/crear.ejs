@@ -1,0 +1,81 @@
+<%- include('cabeceras/cabecera_login')%>
+
+<body>
+    <nav id='nav' class="navbar navbar-expand-lg navbar-light navcolor">
+        <div class="container-fluid">
+          <a type="button" class="navbar-brand" onclick="Presupuesto.verPresupuestos()"><img id='logo' src="./assets/images/logo.png" alt=""><strong>Ti Enterprises</strong></a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      Presupuestos
+                  </li>
+              </ul>
+              <div class="d-flex flex-row-reverse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <select  onselect="Usuarios.cerrarSesion(this.value)" class="form-select-sm" aria-label=".form-select-lg example">
+                    <option default>Carlos Eduardo Muñóz Carbajal</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3"">Cerrar Sesión</option>
+                  </select>
+                </ul>
+              </div>
+        </div>
+    </nav>
+    <main>
+        <div class="justify-content-center formularioFecha" id="formularioFecha">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Mes a registrar</label>
+              <select name="mes" id="meses">
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </select>
+            </div>
+            <div class="mb-3">
+              <label for="version" class="form-label">Año de registro</label>
+              <select name="anios" id="anios"></select>
+            </div>
+            <button class="btn btn-success" onclick="Presupuesto.agregarFecha()">Aceptar</button>
+            <button type="button" class="btn btn-danger" onclick="Presupuesto.ocultarFormularioFecha()">Cancelar</button>
+        </div>
+        <div class="row">
+            <div class="col-4 border">
+                <div class="btn-group-vertical d-grid col-10 mx-auto botones">
+                    <div class="mb-3">
+                        <button class="btn btn-secondary mb-3 btn-lg">Resumen Financiero</button>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-secondary mb-3 btn-lg" onclick="Presupuesto.estructurarFlujo()">Flujo de efectivo</button>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-secondary mb-3 btn-lg">Estado de Resultados</button>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-secondary mb-3 btn-lg" onclick="Ingresos.estructurarIngresos()">Ingresos</button>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-secondary mb-3 btn-lg">Costos Directos</button>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-success mb-3 btn-lg" onclick="Presupuesto.registrarDatos()">Guardar</button>
+                    </div>
+                </div>
+            </div>
+            <div id="contenidos" class="col-8 contenidos">
+                
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

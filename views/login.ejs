@@ -1,0 +1,31 @@
+<%- include('cabeceras/cabecera_login')%>
+    <body>
+        <nav id='nav' class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="principal"><img id='logo' src="./assets/images/logo.png" alt=""> <strong>Ti Enterprises</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="form-signin text-center push">
+            <form>
+                <img class="mb-4" src="assets/brand/user.svg" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal">Ingresa tus datos</h1>
+                <label for="inputEmail" class="visually-hidden">Usuario</label>
+                <input type="email" id="nombreUsuario" class="form-control" placeholder="Usuario" required autofocus>
+                <label for="inputPassword" class="visually-hidden">Contraseña</label>
+                <input type="password" id="contrasenia" class="form-control" placeholder="Contraseña" required>
+                <button id="ingresar" class="w-100 btn btn-lg btn-primary" type="button" onclick="Usuario.ingresar()">Ingresar</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+            </form>
+        </main>
+    </body>
+
+    </html>

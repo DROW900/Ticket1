@@ -1,0 +1,54 @@
+<%- include('cabeceras/cabecera_login')%>
+<body onload="Presupuesto.mostrarPresupuestos()">
+        <nav id='nav' class="navbar navbar-expand-lg navbar-light navcolor">
+            <div class="container-fluid">
+              <a class="navbar-brand"><img id='logo' src="./assets/images/logo.png" alt=""><strong>Ti Enterprises</strong></a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                          Presupuestos
+                      </li>
+                  </ul>
+                  <div class="d-flex flex-row-reverse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <select  onselect="Usuarios.cerrarSesion(this.value)" class="form-select-sm" aria-label=".form-select-lg example">
+                        <option default>Carlos Eduardo Muñóz Carbajal</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3"">Cerrar Sesión</option>
+                      </select>
+                    </ul>
+                  </div>
+            </div>
+        </nav>
+    <div class="container">
+        <main>
+            <div class="justify-content-center formularioRegistro" id="formularioPresupuesto">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nombre del Proyecto</label>
+                  <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="version" class="form-label">Version del proyecto</label>
+                  <input type="text" class="form-control" id="version" itemid="version" aria-describedby="emailHelp">
+                </div>
+                <button class="btn btn-primary" onclick="Presupuesto.guardarPresupuesto()">Continuar</button>
+                <button type="button" class="btn btn-danger" onclick="Presupuesto.ocultarFormulario()">Cancelar</button>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fecha de Creación</th>
+                    <th scope="col">Proyecto</th>
+                    <th scope="col">Versión</th>
+                  </tr>
+                </thead>
+                <tbody id="cuerpoTablaPresupuestos">
+                 
+                </tbody>
+              </table>
+              <button class="btn btn-info" onclick="Presupuesto.mostrarFormulario()">Nuevo Presupuesto</button>
+        </main>
+    </div>
+</body>
