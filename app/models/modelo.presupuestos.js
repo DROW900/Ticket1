@@ -19,6 +19,25 @@ module.exports.obtenerPresupuestos = async()=>{
     }
 }
 
+module.exports.obtenerInfo = async(idPresupuesto)=>{
+    try {
+        let informacionPrincipal = await Presupuestos.findOne({attributes:['id','nombreProyecto','version'], where:{id: idPresupuesto}})
+        const ingresos = await Ingresos.findAll({include:[{model:ConceptosIngresos},{model:Fechas}], where:{presupuestoId: idPresupuesto}})
+        const costos = await CostosDirectos.findAll({include:[{model:ConceptosCostos},{model:Fechas}],where:{presupuestoId: idPresupuesto}})
+        const gastos = await GastosAdmin.findAll({include:[{model:ConceptosGastosAdmin},{model:Fechas}],where:{presupuestoId: idPresupuesto}})
+        const roles = await PorcentajeRecursos.findAll({include:[{model:RolesRecursos},{model:Fechas}] ,where:{presupuestoId: idPresupuesto}})
+        informacionPrincipal.dataValues.ingresos = ingresos
+        informacionPrincipal.dataValues.costos = costos
+        informacionPrincipal.dataValues.gastos = gastos
+        informacionPrincipal.dataValues.recursos = roles
+        return informacionPrincipal 
+    } catch (error) {
+        console.log(error)
+        throw error
+    }
+}
+
+
 module.exports.eliminarPresupuesto = async(idPresupuesto)=>{
     try {
         const resultado = await Presupuestos.update({status: 0}, {where:{id: idPresupuesto}})

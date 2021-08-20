@@ -18,6 +18,15 @@ module.exports.registrarPresupuesto = async(datos)=>{
     }
 }
 
+module.exports.obtenerInfo = async(idPresupuesto)=>{
+    try {
+        const resultado = await modeloPresupuestos.obtenerInfo(idPresupuesto);
+        return resultado        
+    } catch (error) {
+        throw error
+    }
+}
+
 module.exports.eliminarPresupuesto = async(idPresupuesto)=>{
     try {
         const resultado = await modeloPresupuestos.eliminarPresupuesto(idPresupuesto)

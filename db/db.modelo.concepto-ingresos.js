@@ -13,5 +13,4 @@ ConceptosIngresos.init(
         modelName: 'conceptosIngresos',
         timestamps: true
     });
-    
 module.exports = ConceptosIngresos;
