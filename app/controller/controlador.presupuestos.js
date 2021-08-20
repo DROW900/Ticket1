@@ -8,3 +8,21 @@ module.exports.obtenerPresupuestos = async()=>{
         throw error
     }
 }
+
+module.exports.registrarPresupuesto = async(datos)=>{
+    try {
+        const resultado = await modeloPresupuestos.registrarPresupuesto(datos);
+        return resultado
+    } catch (error) {
+        throw error
+    }
+}
+
+module.exports.eliminarPresupuesto = async(idPresupuesto)=>{
+    try {
+        const resultado = await modeloPresupuestos.eliminarPresupuesto(idPresupuesto)
+        return resultado
+    } catch (error) {
+        throw error
+    }
+}

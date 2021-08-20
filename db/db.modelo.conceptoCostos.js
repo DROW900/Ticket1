@@ -1,6 +1,5 @@
 const {DataTypes, Model} = require('sequelize');
-const sequelize = require('../db/db.conexion');
-const Presupuestos = require('./db.modelo.presupuestos');
+const sequelize = require('./db.conexion');
 
 class ConceptosCostos extends Model{}
 
@@ -11,9 +10,8 @@ ConceptosCostos.init(
     },
     {
         sequelize,
-        modelName: 'conceptos_ingresos',
+        modelName: 'conceptosCostos',
         timestamps: true
     });
-ConceptosCostos.Presupuestos = ConceptosCostos.belongsTo(Presupuestos);
-Presupuestos.hasMany(ConceptosCostos);
+    
 module.exports = ConceptosCostos;

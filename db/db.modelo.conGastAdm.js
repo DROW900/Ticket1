@@ -1,17 +1,17 @@
 const {DataTypes, Model} = require('sequelize');
 const sequelize = require('../db/db.conexion');
 
-class ConceptosIngresos extends Model{}
+class ConceptosGastosAdmin extends Model{}
 
-ConceptosIngresos.init(
+ConceptosGastosAdmin.init(
     {
         //Se definen los campos del modelo
         titulo: {type: DataTypes.STRING(50), allowNull:false}
     },
     {
         sequelize,
-        modelName: 'conceptosIngresos',
+        modelName: 'conceptosGastosAdmin',
         timestamps: true
     });
-    
-module.exports = ConceptosIngresos;
+
+module.exports = ConceptosGastosAdmin;

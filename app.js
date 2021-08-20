@@ -14,6 +14,13 @@ const Fechas = require('./db/db.modelo.fechas')
 const Ingresos = require('./db/db.modelo.ingresos')
 const Presupuestos = require('./db/db.modelo.presupuestos')
 const ConceptosIngresos = require('./db/db.modelo.concepto-ingresos')
+const CostosDirectos = require('./db/db.modelo.costosDirectos')
+const ConceptosCostos = require('./db/db.modelo.conceptoCostos')
+const GastosAdmin = require('./db/db.modelo.gastosAdmin')
+const ConceptosGastosAdmin = require('./db/db.modelo.conGastAdm')
+const PorcentajesRecursos = require('./db/db.modelo.porcentajesRec')
+const RolesRecursos = require('./db/db.modelo.roles');
+const PorcentajeRecursos = require('./db/db.modelo.porcentajesRec');
 
 //Middleware globales
 app.use(express.json())
@@ -32,7 +39,13 @@ async function inicioServer(){
         await Fechas.sync({alter: true})
         await Presupuestos.sync({alter: true})
         await ConceptosIngresos.sync({alter: true})
+        await ConceptosCostos.sync({alter: true})
+        await ConceptosGastosAdmin.sync({alter: true})
+        await RolesRecursos.sync({alter: true})
         await Ingresos.sync({alter: true})
+        await CostosDirectos.sync({alter: true})
+        await GastosAdmin.sync({alter: true})
+        await PorcentajeRecursos.sync({alter: true})
         await sequelize.authenticate()
         console.log('Se autenticó correctamente la DB')
         app.listen(process.env.PORT, function(){
